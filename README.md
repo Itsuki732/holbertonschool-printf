@@ -39,8 +39,6 @@ Forker un dépôt/copier pour modifier sans casser l'original
 Créer une branche
 Faire un commit et push
 
-
-
 ## Licence
 
 ## Contact
