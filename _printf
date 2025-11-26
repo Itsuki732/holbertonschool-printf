@@ -1,0 +1,79 @@
+#include "main.h"
+#include <stdarg.h>
+#include <stddef.h>
+
+int _printf(const char *format, ...)
+{
+	int len = 0;
+	int i;
+	int j;
+	int k;
+	int g;
+	va_list ap;
+
+	if (format == NULL)
+		return (-1);
+
+	if (format[0] == '\0')
+		return (0);
+
+	va_start (ap, format);
+
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == 'c')
+			{
+				char c = (char)va_arg(ap, int);
+				_putchar(c);
+				len++;
+			}
+
+			else if (format[i] == 's')
+			{
+				char *str = va_arg(ap, char*);
+				if (str == NULL)
+					str = ("null");
+
+				for (j = 0; str[j] != '\0'; j++)
+				{
+					_putchar(str[j]);
+					len++;
+				}
+			}
+			else if (format[i] == '%')
+			{
+				_putchar('%');
+				len++;
+			}		
+			else if (format[i] == 'd')
+			{
+				int *integer = va_arg(ap, int);
+				for (k = 0; integer[k] != '\0'; k++)
+				{
+					_putchar(integer[k]);
+					len++;
+				}
+			}
+			else if (format[i] == 'i')
+			{
+				int *integer = va_arg(ap, int);
+				for (g = 0; integer[g] != '\0'; g++)
+				{
+					_putchar(integer[g]);
+					len++;
+				}
+			}
+		}
+		else
+		{
+			_putchar(format[i]);
+			len++;
+		}
+	}
+	va_end(ap);
+
+return (len);
+}
