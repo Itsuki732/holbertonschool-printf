@@ -71,7 +71,7 @@ man ./man_3_printf
 
 ## Flowchart
 
-![Flowchart](asset/flowchart.png)
+![Flowchart](asset/Flowchart.png)
 
 ## Authors
 
