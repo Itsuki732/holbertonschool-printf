@@ -1,48 +1,79 @@
-# Printf
+# Holberton School - Project Printf
 
 ## Description
-Parcourt une chaîne de format spécifié et affiche un caractère à la fois, ainsi quand le % est rencontré, il regarde un spécificateur de conversion qui définit le format d'affichage de l'argument suivant.
 
-## Prérequis
-Compilateur C (gcc)
-Connaissance de base en langage C
+This project recreates a simplified version of the printf standard function in C. It supports multiple format specifiers and relies solely on the write() system call.
 
-## Installation
+## Requirements
 
-git clone https://github.com/Itsuki732/holbertonschool-printf.git
+Environment and tools used:
 
-cd holbertonschool-printf
+- Ubuntu 20.04 LTS
+- gcc 9.3.0 (or equivalent version)
+- git
+- Compilation with mandatory flags:
 
-Compilation du projet : gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+  -Wall -Werror -Wextra -pedantic
+- Compliance with standards Betty
 
-## Utilisation
+## Supported Specifiers
 
-#include "main.h"
+| Specifier | Description |
+|----------|-------------|
+| %c       | Print a character |
+| %s       | Print a string |
+| %d / %i  | Print a signed integer |
+| %%       | Print the `%` character |
 
+## Compilation
+
+To compile all the files and generate the executable, use:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic *.c -o printf
+```
+
+## Example :
+
+```c
 int main(void)
-
 {
-_printf("Hello %s ! Je suis %s et développeur depuis %i ans.\n", "astrophysicien", 35);
-return 0;
+    _printf("Character: %c\n", 'A');
+    _printf("String: %s\n", "Hello");
+    _printf("Integer: %d\n", 123);
+    _printf("Percent: %%\n");
+    _printf("Hell%c %d", 'o', 158);
+
+    return 0;
 }
+```
 
-## Fonctionnalités
+## Expected result (STDOUT)
 
-%c : 1 seul caractère
-%s : chaîne de caractères
-%% : affiche un pourcentage
-%d, %i : entier
+![Stdout](assets/Stdout.png)
 
-## Contribution
+## Test :
 
-Forker un dépôt/copier pour modifier sans casser l'original
-Créer une branche
-Faire un commit et push
+```c
+_printf("Test char: %c\n", 'X');
+_printf("Test string: %s\n", "Bonjour");
+_printf("Test integer: %d\n", -42);
+_printf("Test percent: %%\n");
+_printf("Mixed: %s %c %d %%\n", "Test", 'A', 100);
+```
 
-## Licence
+## Man Page
 
-## Contact
+A custom man page is provided.
+To access it, use the command:
 
-Maxime
+man ./man_3_printf
 
-<img width="1360" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e518d19a-552e-4d86-a7d0-93df4401b37a" />
+## Flowchart
+
+![Flowchart](assets/flowchart.png)
+
+## Authors
+
+- **Bryan MARTEL** — [GitHub](https://github.com/Itsuki732)
+- **Maxime RÉGNIER** — [GitHub](https://github.com/Maxime-Regnier)
