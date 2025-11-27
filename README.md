@@ -50,7 +50,7 @@ int main(void)
 
 ## Expected result (STDOUT)
 
-![Stdout](assets/Stdout.png)
+![Stdout](asset/Stdout.png)
 
 ## Test :
 
@@ -71,7 +71,7 @@ man ./man_3_printf
 
 ## Flowchart
 
-![Flowchart](assets/flowchart.png)
+![Flowchart](asset/flowchart.png)
 
 ## Authors
 
